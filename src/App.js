@@ -1,14 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <h1>This is the app component of Pawpal</h1>
-      <Routes>
-        <Route path="/" element="" />
-      </Routes>
-    </div>
+    <>
+      <Navbar />
+      <div className="App float-right w-3/4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
