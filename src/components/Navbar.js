@@ -7,7 +7,7 @@ const Navbar = () => (
 // const location = useLocation();
   <nav className="navbar flex flex-col justify-around h-screen float-left w-1/4 pt-4">
     <div className="brand text-center flex flex-col items-center">
-      <div className=""><img src={ pawLogo } alt="Pawpal app logo"/></div>
+      <div className=""><img src={pawLogo} alt="Pawpal app logo" /></div>
       <h1 className="app-name">PawPal</h1>
     </div>
 
