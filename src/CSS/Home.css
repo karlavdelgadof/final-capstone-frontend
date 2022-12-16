@@ -1,6 +1,6 @@
 #home {
-  background-color: #eff4f0;
-  border-left: 5px solid #9dbda4;
+  background-color: #e2eff3;
+  border-left: 5px solid #88bdce;
 }
 
 .navbar {
@@ -15,17 +15,14 @@
   background:
     -webkit-linear-gradient(
       180deg,
-      hsl(349deg 49% 82%) 1%,
-      hsl(353deg 52% 82%) 42%,
-      hsl(357deg 54% 81%) 49%,
-      hsl(1deg 55% 80%) 51%,
-      hsl(5deg 57% 79%) 51%,
-      hsl(8deg 59% 77%) 50%,
-      hsl(22deg 51% 73%) 49%,
-      hsl(35deg 38% 69%) 49%,
-      hsl(54deg 24% 66%) 51%,
-      hsl(87deg 20% 67%) 58%,
-      hsl(133deg 20% 68%) 99%
+      hsl(334deg 58% 74%) 13%,
+      hsl(85deg 30% 78%) 50%,
+      rgb(160, 205, 181) 50%,
+      hsl(160deg 38% 80%) 50%,
+      hsl(171deg 37% 77%) 50%,
+      hsl(181deg 35% 74%) 53%,
+      hsl(188deg 39% 73%) 60%,
+      hsl(194deg 41% 72%) 96%
     );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
