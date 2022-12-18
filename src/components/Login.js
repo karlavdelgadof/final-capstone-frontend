@@ -18,7 +18,7 @@ const Login = ({ setCurrentUser, setShow }) => {
       const data = await response.json();
       if (!response.ok) throw data.error;
 
-      localStorage.setItem('token', response.headers.get('Authrization'));
+      localStorage.setItem('token', response.headers.get('Authorization'));
       setCurrentUser(data);
     } catch (error) {
       console.log('error', error);
