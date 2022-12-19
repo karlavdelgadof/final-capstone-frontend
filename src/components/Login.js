@@ -1,45 +1,27 @@
 /* eslint-disable react/prop-types */
-
 import { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { logInUser } from '../redux/user/userSlice';
 
-const Login = ({ setCurrentUser, setShow }) => {
+const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const formRef = useRef();
-  const login = async (userInfo, setCurrentUser) => {
-    const url = 'http://127.0.0.1:3001/login';
-    try {
-      const response = await fetch(url, {
-        method: 'post',
-        headers: {
-          'content-type': 'application/json',
-          accept: 'application/json',
-        },
-        body: JSON.stringify(userInfo),
-      });
-      const data = await response.json();
-      if (!response.ok) throw data.error;
 
-      localStorage.setItem('token', response.headers.get('Authorization'));
-      setCurrentUser(data);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
-    const userInfo = {
+    const user = {
       user: {
         email: data.email, password: data.password,
       },
     };
-    login(userInfo, setCurrentUser);
-    e.target.reset();
+    dispatch(logInUser(user));
+    navigate('/');
   };
-  const handleClick = (e) => {
-    e.preventDefault();
-    setShow(false);
-  };
+
   return (
     <div>
       <form ref={formRef} onSubmit={handleSubmit}>
@@ -51,12 +33,10 @@ const Login = ({ setCurrentUser, setShow }) => {
         {' '}
         <input type="password" name="password" placeholder="password" />
         <br />
-        <input type="submit" value="Login" />
+        <button type="submit" value="Login">Login</button>
       </form>
-      <br />
-      <div>
-        Not registered yet,
-        <a href="#signup" onClick={handleClick}>Signup</a>
+      <div className="button">
+        <Link to="/">Sign Up</Link>
       </div>
     </div>
   );
