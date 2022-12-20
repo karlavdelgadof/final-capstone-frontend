@@ -18,7 +18,7 @@ const AccoDetails = () => {
         {accommodation.location.city}
       </p>
       <div>
-        <span>{accommodation.pets.length}</span>
+        <span>{accommodation.user.pets.length}</span>
         <img src={dogIcon} alt="" />
       </div>
       <div>
@@ -44,16 +44,16 @@ const AccoDetails = () => {
       </div>
       <div>
         <h3>PawPals</h3>
-        {accommodation.pets.map((pet) => (
+        {accommodation.user.pets.map((pet) => (
           <div key={pet.id}>
             <h4>{pet.name}</h4>
             <span>{pet.size}</span>
             <Carousel>
               {pet.photos.map((photo) => (
-                <di key={photo}>
+                <div key={photo}>
                   <img src={photo} alt="" />
                   <p className="legend">pet.information</p>
-                </di>
+                </div>
               ))}
             </Carousel>
           </div>

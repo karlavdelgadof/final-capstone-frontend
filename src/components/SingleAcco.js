@@ -3,22 +3,22 @@ import dogIcon from '../multimedia/pet_types/dog.png';
 // import PropTypes from 'prop-types';
 
 const SingleAccommodation = (props) => {
-  const { accomodation } = props;
+  const { accommodation } = props;
   return (
     <div>
       <div>
-        <img src={accomodation.photo[0]} alt="" />
+        <img src={accommodation.photos[0]} alt="" />
       </div>
       <div>
-        <h3>{accomodation.description}</h3>
+        <h3>{accommodation.description}</h3>
         <p>
-          {accomodation.location.country}
+          {accommodation.location.country}
           ,
-          {accomodation.location.city}
+          {accommodation.location.city}
         </p>
       </div>
       <div>
-        <span>{accomodation.pets.length}</span>
+        <span>{accommodation.user.pets.length}</span>
         <img src={dogIcon} alt="" />
       </div>
     </div>
