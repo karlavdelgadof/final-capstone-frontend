@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-// import nameReducer from './foldername/nameSlice';
+import accommodationsReducer from './Accomodations/accommodations';
 
 const store = configureStore({
   reducer: {
-    // reducername: nameReducer,
+    accommodations: accommodationsReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
