@@ -7,15 +7,19 @@ const SingleAccommodation = (props) => {
   return (
     <div>
       <div>
-        <img src={accomodation.photo[0]}/>
+        <img src={accomodation.photo[0]} alt="" />
       </div>
       <div>
         <h3>{accomodation.description}</h3>
-        <p>{accomodation.location.country},{accomodation.location.city}</p>
+        <p>
+          {accomodation.location.country}
+          ,
+          {accomodation.location.city}
+        </p>
       </div>
       <div>
         <span>{accomodation.pets.length}</span>
-        <img src={dogIcon}/>
+        <img src={dogIcon} alt="" />
       </div>
     </div>
   );
@@ -30,4 +34,3 @@ const SingleAccommodation = (props) => {
 // };
 
 export default SingleAccommodation;
-

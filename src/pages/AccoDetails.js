@@ -1,9 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import dogIcon from '../multimedia/pet_types/dog.png';
-
 
 const AccoDetails = () => {
   const location = useLocation();
@@ -13,19 +12,26 @@ const AccoDetails = () => {
   return (
     <div>
       <h2>{accommodation.description.slice(0, 20)}</h2>
-      <p>{accommodation.location.country},{accommodation.location.city}</p>
+      <p>
+        {accommodation.location.country}
+        ,
+        {accommodation.location.city}
+      </p>
       <div>
         <span>{accommodation.pets.length}</span>
-        <img src={dogIcon}/>
+        <img src={dogIcon} alt="" />
       </div>
       <div>
         <Carousel>
-        {accommodation.photos.map((photo, i) => (
-          <div>
-            <img src={photo} />
-            <p className="legend">Legend {i}</p>
-          </div>
-        ))}
+          {accommodation.photos.map((photo, i) => (
+            <div key={photo}>
+              <img src={photo} alt="" />
+              <p className="legend">
+                Legend
+                {i}
+              </p>
+            </div>
+          ))}
         </Carousel>
       </div>
       <div>
@@ -39,21 +45,21 @@ const AccoDetails = () => {
       <div>
         <h3>PawPals</h3>
         {accommodation.pets.map((pet) => (
-          <div>
+          <div key={pet.id}>
             <h4>{pet.name}</h4>
             <span>{pet.size}</span>
             <Carousel>
               {pet.photos.map((photo) => (
-                <div>
-                  <img src={photo} />
+                <di key={photo}>
+                  <img src={photo} alt="" />
                   <p className="legend">pet.information</p>
-                </div>
+                </di>
               ))}
             </Carousel>
           </div>
         ))}
       </div>
-      <button>Reserve</button>
+      <button type="button">Reserve</button>
     </div>
 
   );
