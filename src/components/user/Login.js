@@ -1,13 +1,17 @@
-/* eslint-disable react/prop-types */
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { logInUser } from '../redux/user/userSlice';
+import { logInUser } from '../../redux/user/userSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const formRef = useRef();
+
+  const getUser = async (user) => {
+    await dispatch(logInUser(user));
+    navigate('/', { replace: true });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,8 +22,7 @@ const Login = () => {
         email: data.email, password: data.password,
       },
     };
-    dispatch(logInUser(user));
-    navigate('/');
+    getUser(user);
   };
 
   return (
@@ -36,7 +39,7 @@ const Login = () => {
         <button type="submit" value="Login">Login</button>
       </form>
       <div className="button">
-        <Link to="/">Sign Up</Link>
+        <Link to="/user/signup">Sign Up</Link>
       </div>
     </div>
   );

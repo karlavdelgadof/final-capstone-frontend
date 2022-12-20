@@ -11,6 +11,12 @@ const initialState = {
 
 // const url = 'http://127.0.0.1:3001/';
 
+export const userIsLogged = () => {
+  const isLogged = localStorage.getItem('token');
+  if (isLogged) return true;
+  return false;
+};
+
 export const createUser = createAsyncThunk(
   POST_SIGNUP,
   async (user) => {
@@ -73,14 +79,27 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(createUser.fulfilled, (state, action) => ({
-        user: action.payload.user,
+        user: action.payload.status.data.user,
         lifecycle: { loading: 'loaded' },
       }))
-      .addCase(createUser.pending, (state) => ({
-        ...state,
-        lifecycle: { loading: 'pending' },
-      }))
       .addCase(createUser.rejected, (state) => ({
+        ...state,
+        lifecycle: { loading: 'rejected' },
+      }))
+      .addCase(logInUser.fulfilled, (state, action) => ({
+        user: action.payload.status.data.user,
+        lifecycle: { loading: 'loaded' },
+      }))
+      .addCase(logInUser.rejected, (state) => ({
+        ...state,
+        lifecycle: { loading: 'rejected' },
+      }))
+      .addCase(logOutUser.fulfilled, (state) => ({
+        ...state,
+        user: [],
+        lifecycle: { loading: 'loaded' },
+      }))
+      .addCase(logOutUser.rejected, (state) => ({
         ...state,
         lifecycle: { loading: 'rejected' },
       }));

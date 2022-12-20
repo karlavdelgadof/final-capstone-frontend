@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { createUser } from '../redux/user/userSlice';
+import { createUser } from '../../redux/user/userSlice';
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -32,7 +31,7 @@ const Signup = () => {
         <button type="submit" value="Sign In">Sign Up</button>
       </form>
       <div className="button">
-        <Link to="/">Login</Link>
+        <Link to="/user/login">Login</Link>
       </div>
     </div>
   );
