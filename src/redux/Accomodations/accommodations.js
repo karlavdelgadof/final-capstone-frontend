@@ -1,6 +1,34 @@
 // import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+export let locations = [
+  {
+    id: 1,
+    country: 'Sweden',
+    city: 'Orsundsbro',
+  },
+  {
+    id: 2,
+    country: 'Norway',
+    city: 'Oslo',
+  },
+  {
+    id: 3,
+    country: 'Turkey',
+    city: 'Ankara',
+  },
+  {
+    id: 4,
+    country: 'Mexico',
+    city: 'Tulum',
+  },
+  {
+    id: 5,
+    country: 'France',
+    city: 'Marseille',
+  },
+]
+
 const initialState = [
   {
     id: 1,
@@ -10,11 +38,7 @@ const initialState = [
       'https://picsum.photos/200/300',
       'https://picsum.photos/200/300',
     ],
-    location: {
-      id: 1,
-      country: 'Sweden',
-      city: 'Orsundsbro',
-    },
+    location: locations[0],
     pets: [
       {
         id: 1,
@@ -38,11 +62,7 @@ const initialState = [
       'https://picsum.photos/200/300',
       'https://picsum.photos/200/300',
     ],
-    location: {
-      id: 2,
-      country: 'Norway',
-      city: 'Oslo',
-    },
+    location: locations[1],
     pets: [
       {
         id: 2,
@@ -67,11 +87,7 @@ const initialState = [
       'https://picsum.photos/200/300',
       'https://picsum.photos/200/300',
     ],
-    location: {
-      id: 3,
-      country: 'Turkey',
-      city: 'Ankara',
-    },
+    location: locations[2],
     pets: [
       {
         id: 3,
@@ -95,11 +111,7 @@ const initialState = [
       'https://picsum.photos/200/300',
       'https://picsum.photos/200/300',
     ],
-    location: {
-      id: 4,
-      country: 'Mexico',
-      city: 'Tulum',
-    },
+    location: locations[3],
     pets: [
       {
         id: 4,
@@ -123,11 +135,7 @@ const initialState = [
       'https://picsum.photos/200/300',
       'https://picsum.photos/200/300',
     ],
-    location: {
-      id: 5,
-      country: 'France',
-      city: 'Marseille',
-    },
+    location: locations[4],
     pets: [
       {
         id: 5,
