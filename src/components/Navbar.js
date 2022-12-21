@@ -20,7 +20,7 @@ const Navbar = () => (
       {/* /profile */}
       <li className="p-4"><NavLink to="">My Profile</NavLink></li>
       {/* /accommodations/new */}
-      <li className="p-4"><NavLink to="">Add a House sit</NavLink></li>
+      <li className="p-4"><NavLink to="/accomodation/new">Add a House sit</NavLink></li>
       {/* /accommodations */}
       <li className="p-4"><NavLink to="">Delete a House sit</NavLink></li>
     </ul>

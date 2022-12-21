@@ -1,10 +1,11 @@
 import React from 'react';
+import AccommodationsContainer from '../components/Accomodations';
 import '../CSS/Home.css';
 
 const Home = () => (
   <main>
     <div>
-      Accommodations will go in here
+      <AccommodationsContainer />
     </div>
   </main>
 );
