@@ -11,7 +11,6 @@ const Home = () => {
   }
   return (
     <div>
-      <Navbar />
       <main className="App float-right w-3/4">
         <div>
           <AccommodationsContainer />
