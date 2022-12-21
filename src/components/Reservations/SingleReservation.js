@@ -20,8 +20,8 @@ const SingleReservation = (props) => {
 SingleReservation.propTypes = {
   reservation: PropTypes.shape({
     accommodation: PropTypes.string,
-    start_date: PropTypes.number,
-    end_date: PropTypes.number,
+    start_date: PropTypes.string,
+    end_date: PropTypes.string,
   }).isRequired,
 };
 export default SingleReservation;
