@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import userReducer from './user/userSlice';
-// import nameReducer from './foldername/nameSlice';
+import accommodationsReducer from './Accomodations/accommodations';
+import reservationsReducer from './Reservations/reservations';
 
 const store = configureStore({
   reducer: {
-    // reducername: nameReducer,
+    reservations: reservationsReducer,
+    accommodations: accommodationsReducer,
     user: userReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
