@@ -8,11 +8,9 @@ import ReserveForm from './components/Forms/Reserve';
 import MyReservations from './pages/MyReservations';
 import AccommodationsForm from './components/AccoForm';
 
-
 function App() {
   return (
     <>
-      <Navbar />
       <div className="App float-right w-3/4">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,9 +19,9 @@ function App() {
           <Route path="/reserve" element={<ReserveForm />} />
           <Route path="/accomodation/new" element={<AccommodationsForm />} />
           <Route path="/user">
-          <Route path="login" element={LoginPage} />
-          <Route path="signup" element={SingUpPage} />
-        </Route>
+            <Route path="login" element={LoginPage} />
+            <Route path="signup" element={SingUpPage} />
+          </Route>
         </Routes>
       </div>
     </>
