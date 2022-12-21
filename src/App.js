@@ -6,7 +6,7 @@ import LoginPage from './pages/user/LoginPage';
 import AccoDetails from './pages/AccoDetails';
 import ReserveForm from './components/Forms/Reserve';
 import MyReservations from './pages/MyReservations';
-import AccommodationsForm from './components/AccoForm';
+import AccommodationsForm from './components/Forms/AccoForm';
 import Navbar from './components/Navbar';
 
 function App() {
