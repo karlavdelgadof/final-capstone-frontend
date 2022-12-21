@@ -17,9 +17,9 @@ const SingleAccommodation = (props) => {
           {accommodation.location.city}
         </p>
       </div>
-      <div>
+      <div className="flex gap-4 text-base">
         <span>{accommodation.pets.length}</span>
-        <img src={dogIcon} alt="" />
+        <img src={dogIcon} alt="" className="h-6"/>
       </div>
     </div>
   );
