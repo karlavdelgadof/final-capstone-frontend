@@ -1,9 +1,10 @@
 // import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { locations } from '../../redux/Accomodations/accommodations';
 
 function AccommodationsForm() {
-  const locations = useSelector((state) => state.locations);
+  // const locations = useSelector((state) => state.locations);
   const dispatch = useDispatch();
   const [description, setDescription] = useState(null);
   const [address, setAddress] = useState(null);
