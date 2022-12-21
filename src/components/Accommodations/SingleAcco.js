@@ -1,5 +1,5 @@
 import React from 'react';
-import dogIcon from '../multimedia/pet_types/dog.png';
+import dogIcon from '../../multimedia/pet_types/dog.png';
 // import PropTypes from 'prop-types';
 
 const SingleAccommodation = (props) => {

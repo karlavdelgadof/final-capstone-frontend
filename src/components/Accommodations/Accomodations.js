@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 // Fetch get accommodations
-import { getAccommodations } from '../redux/Accomodations/accommodations';
+import { getAccommodations } from '../../redux/Accomodations/accommodations';
 import SingleAcco from './SingleAcco';
 
 const AccommodationsContainer = () => {
