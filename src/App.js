@@ -13,7 +13,7 @@ function App() {
   const location = useLocation();
   return (
     <>
-      { location.pathname.includes('/user') ? "" : <Navbar />}
+      { location.pathname.includes('/user') ? '' : <Navbar />}
       <div className="App w-3/4">
         <Routes>
           <Route path="/" element={<Home />} />

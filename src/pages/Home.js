@@ -10,9 +10,9 @@ const Home = () => {
   }
   return (
     <main>
-        <div>
-          <AccommodationsContainer className="flex flex-wrap"/>
-        </div>
+      <div>
+        <AccommodationsContainer className="flex flex-wrap" />
+      </div>
     </main>
   );
 };

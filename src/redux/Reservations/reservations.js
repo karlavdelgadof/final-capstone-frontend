@@ -23,12 +23,10 @@ const initialState = [
 // return response.data;
 // });
 
-export const getReservations = createAsyncThunk('reservations/getReservations', async () => {
+export const getReservations = createAsyncThunk('reservations/getReservations', async () => initialState);
 // const response = await axios.get(apiURL);
 // console.log(response.data)
 // return response.data;
-return initialState;
-});
 
 // export const cancelReservation = createAsyncThunk('reservations/cancelReservation',
 //   async (reservation) => {
@@ -42,21 +40,21 @@ export const reservationsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     // Add reducers to handle loading state as needed
-      builder
+    builder
       // .addCase(reserve.fulfilled, (state, action) => {
       //   //Create reservation
       //   state.push(action.payload);
       // })
       .addCase(getReservations.fulfilled, (state, action) => Object.entries(action.payload).map(
         ([id, [reservation]]) => ({ ...reservation, id }),
-      ))
-      // .addCase(cancelReservation.fulfilled, (state, action) => {
-      // state.forEach((reservation) => {
-      //     if (reservation.id === action.payload.id) {
-      //       state.splice(state.indexOf(reservation), 1);
-      //     }
-      //   });
-      // });
+      ));
+    // .addCase(cancelReservation.fulfilled, (state, action) => {
+    // state.forEach((reservation) => {
+    //     if (reservation.id === action.payload.id) {
+    //       state.splice(state.indexOf(reservation), 1);
+    //     }
+    //   });
+    // });
   },
 });
 
