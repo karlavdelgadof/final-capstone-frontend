@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import dogIcon from '../multimedia/pet_types/dog.png';
-// import PropTypes from 'prop-types';
 
 const SingleAccommodation = (props) => {
   const { accommodation } = props;
@@ -18,19 +18,21 @@ const SingleAccommodation = (props) => {
         </p>
       </div>
       <div>
-        <span>{accommodation.user.pets.length}</span>
+        <span>{accommodation.pets.length}</span>
         <img src={dogIcon} alt="" />
       </div>
     </div>
   );
 };
 
-// SingleCollection.propTypes = {
-//   accomodation: PropTypes.shape({
-//     location: PropTypes.number,
-//     something: PropTypes.string,
-//     symbol: PropTypes.string,
-//   }).isRequired,
-// };
+SingleAccommodation.propTypes = {
+  accommodation: PropTypes.shape({
+    location: PropTypes.number,
+    description: PropTypes.string,
+    photos: PropTypes.string,
+    pets: PropTypes.string,
+    symbol: PropTypes.string,
+  }).isRequired,
+};
 
 export default SingleAccommodation;
