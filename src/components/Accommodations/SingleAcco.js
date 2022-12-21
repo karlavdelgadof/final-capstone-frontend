@@ -27,9 +27,12 @@ const SingleAccommodation = (props) => {
 
 SingleAccommodation.propTypes = {
   accommodation: PropTypes.shape({
-    location: PropTypes.number,
+    location: PropTypes.shape({
+      country: PropTypes.string,
+      city: PropTypes.string
+    }),
     description: PropTypes.string,
-    photos: PropTypes.string,
+    photos: PropTypes.instanceOf(Array).isRequired,
     pets: PropTypes.string,
     symbol: PropTypes.string,
   }).isRequired,
