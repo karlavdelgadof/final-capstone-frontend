@@ -10,13 +10,11 @@ const Home = () => {
     return <Navigate to="/user/login" />;
   }
   return (
-    <div>
-      <main className="App float-right w-3/4">
+    <main>
         <div>
           <AccommodationsContainer />
         </div>
-      </main>
-    </div>
+    </main>
   );
 };
 
