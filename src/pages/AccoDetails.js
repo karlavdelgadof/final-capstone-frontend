@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import dogIcon from '../multimedia/pet_types/dog.png';
@@ -59,7 +59,9 @@ const AccoDetails = () => {
           </div>
         ))}
       </div>
-      <button type="button">Reserve</button>
+      <Link to="/reserve" state={{ accommodation }}>
+        Reserve
+      </Link>
     </div>
 
   );

@@ -1,5 +1,6 @@
 import React from 'react';
-import AccommodationsContainer from '../components/Accomodations';
+import AccommodationsContainer from '../components/Accommodations/Accomodations';
+
 import '../CSS/Home.css';
 
 const Home = () => (

@@ -16,7 +16,7 @@ const Navbar = () => (
       {/* /reservations/new */}
       <li className="p-4"><NavLink to="">Reserve</NavLink></li>
       {/* /reservations */}
-      <li className="p-4"><NavLink to="">My Reservations</NavLink></li>
+      <li className="p-4"><NavLink to="/reservations">My Reservations</NavLink></li>
       {/* /profile */}
       <li className="p-4"><NavLink to="">My Profile</NavLink></li>
       {/* /accommodations/new */}
