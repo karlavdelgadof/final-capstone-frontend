@@ -18,7 +18,7 @@ const ReservationsContainer = () => {
         <h2 id="section-title">Check your reservations</h2>
         <div id="collections">
           {reservations.map((reservation) => (
-              <SingleReservation reservation={reservation} key={reservation.id}/>
+            <SingleReservation reservation={reservation} key={reservation.id} />
           ))}
         </div>
       </div>

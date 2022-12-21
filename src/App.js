@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import AccoDetails from './pages/AccoDetails';
 import ReserveForm from './components/Forms/Reserve';
 import MyReservations from './pages/MyReservations';
-
+import AccommodationsForm from './components/AccoForm';
 
 function App() {
   return (

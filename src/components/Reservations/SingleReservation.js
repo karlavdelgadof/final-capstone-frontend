@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import bellIcon from '../../multimedia/reservation.png';
 
 const SingleReservation = (props) => {
@@ -17,5 +17,11 @@ const SingleReservation = (props) => {
     </div>
   );
 };
-
+SingleReservation.propTypes = {
+  reservation: PropTypes.shape({
+    accommodation: PropTypes.string,
+    start_date: PropTypes.number,
+    end_date: PropTypes.number,
+  }).isRequired,
+};
 export default SingleReservation;
