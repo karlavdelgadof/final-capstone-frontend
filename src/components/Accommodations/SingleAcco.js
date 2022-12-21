@@ -7,10 +7,10 @@ const SingleAccommodation = (props) => {
   return (
     <div>
       <div>
-        <img src={accommodation.photos[0]} alt="" />
+        <img src={accommodation.photos[0]} alt="" className="w-full" />
       </div>
       <div>
-        <h3>{accommodation.description}</h3>
+        <h3>{accommodation.description.slice(0, 30) + "..."}</h3>
         <p>
           {accommodation.location.country}
           ,
@@ -33,7 +33,7 @@ SingleAccommodation.propTypes = {
     }),
     description: PropTypes.string,
     photos: PropTypes.instanceOf(Array).isRequired,
-    pets: PropTypes.string,
+    pets: PropTypes.instanceOf(Array).isRequired,
     symbol: PropTypes.string,
   }).isRequired,
 };

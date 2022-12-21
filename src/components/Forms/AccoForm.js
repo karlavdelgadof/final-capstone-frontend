@@ -32,7 +32,7 @@ function AccommodationsForm() {
   return (
     <>
 
-      <h1>Add a new Accommodation</h1>
+      <h1>Add a new House sit</h1>
       <form onSubmit={handleSubmit}>
         <input value={description} onInput={(e) => setDescription(e.target.value)} placeholder="Add Details about the place..." type="text" />
         <input value={address} onInput={(e) => setAddress(e.target.value)} placeholder="Address" type="text" />

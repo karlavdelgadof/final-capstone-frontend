@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       { location.pathname.includes('/user') ? "" : <Navbar />}
-      <div className="App float-right w-3/4">
+      <div className="App w-3/4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reservations" element={<MyReservations />} />

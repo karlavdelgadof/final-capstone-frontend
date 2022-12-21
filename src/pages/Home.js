@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { userIsLogged } from '../redux/user/userSlice';
 import AccommodationsContainer from '../components/Accommodations/Accomodations';
 import '../CSS/Home.css';
@@ -12,7 +11,7 @@ const Home = () => {
   return (
     <main>
         <div>
-          <AccommodationsContainer />
+          <AccommodationsContainer className="flex flex-wrap"/>
         </div>
     </main>
   );

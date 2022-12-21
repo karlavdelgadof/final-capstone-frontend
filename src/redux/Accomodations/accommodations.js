@@ -1,7 +1,7 @@
 // import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export let locations = [
+export const locations = [
   {
     id: 1,
     country: 'Sweden',
