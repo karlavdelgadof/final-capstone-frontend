@@ -6,6 +6,7 @@ import AccoDetails from './pages/AccoDetails';
 import ReserveForm from './components/Forms/Reserve';
 import MyReservations from './pages/MyReservations';
 
+
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/reservations" element={<MyReservations />} />
           <Route path="/accomodation-details" element={<AccoDetails />} />
           <Route path="/reserve" element={<ReserveForm />} />
+          <Route path="/accomodation/new" element={<AccommodationsForm />} />
         </Routes>
       </div>
     </>
