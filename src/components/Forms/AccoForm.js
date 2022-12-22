@@ -31,7 +31,7 @@ function AccommodationsForm() {
 
   return (
     <>
-
+    <div>
       <h1>Add a new House sit</h1>
       <form onSubmit={handleSubmit}>
         <input value={description} onInput={(e) => setDescription(e.target.value)} placeholder="Add Details about the place..." type="text" />
@@ -55,6 +55,7 @@ function AccommodationsForm() {
           Create Accommodation
         </button>
       </form>
+    </div>
     </>
   );
 }

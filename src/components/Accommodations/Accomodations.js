@@ -21,19 +21,20 @@ const AccommodationsContainer = () => {
 
   return (
     <>
-      <div id="search">
+      <div className="self-end">
         <input
           type="search"
           value={search}
-          placeholder="Type a Location"
+          placeholder="Type a location"
+          className="rounded-[50px] border-2 border-[#bedbe4] p-2"
           onChange={(e) => {
             setSearch(e.target.value);
           }}
         />
         {/* <i><img src={searchIcon} alt="" /></i> */}
       </div>
-      <div className="accommodations-cont">
-        <h2 id="section-title">Choose your next sitting adventure destination</h2>
+      <div className="flex flex-col gap-4">
+        <h2 className="text-lg">Choose your next sitting adventure destination</h2>
         <div className="grid grid-cols-3 gap-8">
           {filtered.map((accommodation) => (
             <Link

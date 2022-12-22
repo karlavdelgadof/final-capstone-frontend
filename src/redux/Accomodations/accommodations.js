@@ -35,8 +35,8 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
     location: locations[0],
     pets: [
@@ -59,8 +59,8 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
     location: locations[1],
     pets: [
@@ -84,8 +84,8 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
     location: locations[2],
     pets: [
@@ -108,8 +108,8 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
     location: locations[3],
     pets: [
@@ -132,8 +132,8 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
     location: locations[4],
     pets: [
