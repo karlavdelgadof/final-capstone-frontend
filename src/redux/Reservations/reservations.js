@@ -11,8 +11,8 @@ const initialState = {
   lifecycle: { loading: 'initial' },
 };
 
-const reservationsURL = 'http://127.0.0.1:3001/api/v1/reservations';
-const reservationURL = 'http://127.0.0.1:3001/api/v1/reservations/id';
+// const reservationsURL = 'http://127.0.0.1:3001/api/v1/reservations';
+// const reservationURL = 'http://127.0.0.1:3001/api/v1/reservations/id';
 
 export const getReservations = createAsyncThunk(
   GET_RESERVATIONS,
