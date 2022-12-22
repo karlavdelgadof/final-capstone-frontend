@@ -15,19 +15,19 @@ const initialState = [
       country: 'Sweden',
       city: 'Orsundsbro',
     },
+    pets: [
+      {
+        id: 1,
+        name: 'Bubbles',
+        size: 'medium',
+        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
+        information: 'Bubbles is a loving, energetic cattle dog who loves all of your attention. She is a single child and expects to be with you all the time.',
+        specie: 'dog'
+      }
+    ],
     user: {
       id: 1,
-      name: 'Martha Vivatoska',
-      pets: [
-        {
-          id: 1,
-          name: 'Bubbles',
-          size: 'medium',
-          photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-          information: 'Bubbles is a loving, energetic cattle dog who loves all of your attention. She is a single child and expects to be with you all the time.',
-          specie: 'dog',
-        },
-      ],
+      name: 'Martha Vivatoska'
     },
   },
   {
@@ -43,19 +43,20 @@ const initialState = [
       country: 'Norway',
       city: 'Oslo',
     },
+    pets: [
+      {
+        id: 2,
+        name: 'Penny',
+        size: 'small',
+        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
+        information: 'Penny is a loving, energetic cattle cat who loves all of your attention. She is a single child and expects to be with you all the time.',
+        specie: 'cat',
+      }
+    ],
     user: {
       id: 2,
       name: 'Cedric Tovsk',
-      pets: [
-        {
-          id: 2,
-          name: 'Penny',
-          size: 'small',
-          photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-          information: 'Penny is a loving, energetic cattle cat who loves all of your attention. She is a single child and expects to be with you all the time.',
-          specie: 'cat',
-        },
-      ],
+
     },
   },
   {
@@ -71,20 +72,20 @@ const initialState = [
       country: 'Turkey',
       city: 'Ankara',
     },
+    pets: [
+      {
+        id: 3,
+        name: 'Poppie',
+        size: 'large',
+        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
+        information: 'Bubbles is a loving, energetic cattle dog who loves all of your attention. She is a single child and expects to be with you all the time.',
+        specie: 'dog'
+      }
+    ],
     user: {
       id: 3,
-      name: 'Zair Sud',
-      pets: {
-        0: {
-          id: 3,
-          name: 'Poppie',
-          size: 'large',
-          photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-          information: 'Bubbles is a loving, energetic cattle dog who loves all of your attention. She is a single child and expects to be with you all the time.',
-          specie: 'dog',
-        },
-      },
-    },
+      name: 'Zair Sud'
+    }
   },
   {
     id: 4,
@@ -99,20 +100,20 @@ const initialState = [
       country: 'Mexico',
       city: 'Tulum',
     },
+    pets: [
+      {
+        id: 4,
+        name: 'Bruno',
+        size: 'large',
+        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
+        information: 'Bruno is a loving, energetic cattle dog who loves all of your attention. He is a single child and expects to be with you all the time.',
+        specie: 'dog'
+      }
+    ],
     user: {
       id: 4,
-      name: 'Fernando Orozco',
-      pets: [
-        {
-          id: 4,
-          name: 'Bruno',
-          size: 'large',
-          photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-          information: 'Bruno is a loving, energetic cattle dog who loves all of your attention. He is a single child and expects to be with you all the time.',
-          specie: 'dog',
-        },
-      ],
-    },
+      name: 'Fernando Orozco'
+    }
   },
   {
     id: 5,
@@ -127,20 +128,20 @@ const initialState = [
       country: 'France',
       city: 'Marseille',
     },
+    pets: [
+      {
+        id: 5,
+        name: 'Storm',
+        size: 'medium',
+        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
+        information: 'Storm is a loving, energetic lizard who loves all of your attention. She is a single child and expects to be with you all the time.',
+        specie: 'lizard'
+      }
+    ],
     user: {
       id: 5,
-      name: 'David Gobblet',
-      pets: [
-        {
-          id: 5,
-          name: 'Storm',
-          size: 'medium',
-          photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-          information: 'Storm is a loving, energetic lizard who loves all of your attention. She is a single child and expects to be with you all the time.',
-          specie: 'lizard',
-        },
-      ],
-    },
+      name: 'David Gobblet'
+    }
   },
 
 ];

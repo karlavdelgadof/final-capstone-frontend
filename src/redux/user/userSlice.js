@@ -79,7 +79,7 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(createUser.fulfilled, (state, action) => ({
-        user: action.payload.status.data.user,
+        user: action.payload.status.data,
         lifecycle: { loading: 'loaded' },
       }))
       .addCase(createUser.rejected, (state) => ({
@@ -87,7 +87,7 @@ export const userSlice = createSlice({
         lifecycle: { loading: 'rejected' },
       }))
       .addCase(logInUser.fulfilled, (state, action) => ({
-        user: action.payload.status.data.user,
+        user: action.payload.status.data,
         lifecycle: { loading: 'loaded' },
       }))
       .addCase(logInUser.rejected, (state) => ({
