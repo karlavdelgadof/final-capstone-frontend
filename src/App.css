@@ -37,3 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
+.reservation-item {
+  box-shadow: 21px 21px 43px #b8b8b8, -21px -21px 43px #ffff;
+}

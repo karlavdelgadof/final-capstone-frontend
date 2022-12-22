@@ -2,7 +2,7 @@ import React from 'react';
 import ReservationsContainer from '../components/Reservations/ReservationsContainer';
 
 const MyReservations = () => (
-  <main>
+  <main className="h-full">
     <div>
       <ReservationsContainer />
     </div>

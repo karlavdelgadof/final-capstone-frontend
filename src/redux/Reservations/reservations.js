@@ -13,6 +13,16 @@ const initialState = [
     start_date: '22/11/20',
     end_date: '22/12/20',
   },
+  {
+    id: 1,
+    user: {
+      id: 1,
+      name: 'Martha Vivatoska',
+    },
+    accommodation: 'This will be the accommodation description',
+    start_date: '22/11/20',
+    end_date: '22/12/20',
+  },
 ];
 
 // export const reserve = createAsyncThunk('reservations/reserve', async (reservation) => {

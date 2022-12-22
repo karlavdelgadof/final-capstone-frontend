@@ -14,9 +14,9 @@ const ReservationsContainer = () => {
 
   return (
     <>
-      <div className="accommodations-cont">
-        <h2 id="section-title">Check your reservations</h2>
-        <div id="collections">
+      <div className="flex flex-col mt-12">
+        <h2 className="text-lg">Check your reservations</h2>
+        <div className="flex flex-wrap p-8 gap-6 justify-around">
           {reservations.map((reservation) => (
             <SingleReservation reservation={reservation} key={reservation.id} />
           ))}
