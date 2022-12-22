@@ -34,7 +34,7 @@ const AccommodationsContainer = () => {
       </div>
       <div className="accommodations-cont">
         <h2 id="section-title">Choose your next sitting adventure destination</h2>
-        <div id="collections">
+        <div className="grid grid-cols-3 gap-8">
           {filtered.map((accommodation) => (
             <Link
               to="accomodation-details"

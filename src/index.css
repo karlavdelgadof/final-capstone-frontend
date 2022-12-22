@@ -10,9 +10,14 @@
   padding: 0;
 }
 
+#root {
+  display: flex;
+}
+
 body {
   font-family: 'Lexend Deca', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fefdfb;
+  height: 100vh;
 }

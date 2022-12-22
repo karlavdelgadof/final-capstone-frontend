@@ -6,13 +6,15 @@ import LoginPage from './pages/user/LoginPage';
 import AccoDetails from './pages/AccoDetails';
 import ReserveForm from './components/Forms/Reserve';
 import MyReservations from './pages/MyReservations';
-import AccommodationsForm from './components/AccoForm';
+import AccommodationsForm from './components/Forms/AccoForm';
+import Navbar from './components/Navbar';
 
 function App() {
   const location = useLocation();
   return (
     <>
-      <div className="App float-right w-3/4">
+      { location.pathname.includes('/user') ? '' : <Navbar />}
+      <div className="App w-3/4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reservations" element={<MyReservations />} />
