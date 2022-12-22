@@ -17,18 +17,7 @@ const initialState = {
 export const getReservations = createAsyncThunk(
   GET_RESERVATIONS,
   async () => {
-    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations');
-    if (response.ok) {
-      return response.json();
-    }
-    throw response;
-  },
-);
-
-export const getReservation = createAsyncThunk(
-  GET_RESERVATION,
-  async () => {
-    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id');
+    const response = await fetch('http://127.0.0.1:3001/api/v1/reservations');
     if (response.ok) {
       return response.json();
     }
@@ -40,7 +29,7 @@ export const createReservation = createAsyncThunk(
   POST_RESERVATION,
   async (reservation) => {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations', {
+    const response = await fetch('http://127.0.0.1:3001/api/v1/reservations', {
       method: 'post',
       headers: {
         'content-type': 'application/json',
@@ -55,11 +44,22 @@ export const createReservation = createAsyncThunk(
   },
 );
 
+export const getReservation = createAsyncThunk(
+  GET_RESERVATION,
+  async (reservationId) => {
+    const response = await fetch(`http://127.0.0.1:3001/api/v1/reservations/${reservationId}`);
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
+
 export const deleteReservation = createAsyncThunk(
   DELETE_RESERVATION,
-  async () => {
+  async (reservationId) => {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id', {
+    const response = await fetch(`http://127.0.0.1:3001/api/v1/reservations/${reservationId}`, {
       method: 'delete',
       headers: {
         'content-type': 'application/json',
@@ -78,22 +78,23 @@ export const reservationsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // Add reducers to handle loading state as needed
     builder
-      // .addCase(reserve.fulfilled, (state, action) => {
-      //   //Create reservation
-      //   state.push(action.payload);
-      // })
-      .addCase(getReservations.fulfilled, (state, action) => Object.entries(action.payload).map(
-        ([id, [reservation]]) => ({ ...reservation, id }),
-      ));
-    // .addCase(cancelReservation.fulfilled, (state, action) => {
-    // state.forEach((reservation) => {
-    //     if (reservation.id === action.payload.id) {
-    //       state.splice(state.indexOf(reservation), 1);
-    //     }
-    //   });
-    // });
+      .addCase(getReservations.fulfilled, (state, action) => ({
+        reservations: action.payload.status.data,
+        lifecycle: { loading: 'loaded' },
+      }))
+      .addCase(getReservations.rejected, (state) => ({
+        ...state,
+        lifecycle: { loading: 'rejected' },
+      }))
+      .addCase(createReservation.fulfilled, (state, action) => ({
+        reservations: action.payload.status.data,
+        lifecycle: { loading: 'loaded' },
+      }))
+      .addCase(createReservation.rejected, (state) => ({
+        ...state,
+        lifecycle: { loading: 'rejected' },
+      }));
   },
 });
 

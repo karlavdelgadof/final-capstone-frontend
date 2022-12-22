@@ -27,17 +27,6 @@ export const getAccommodations = createAsyncThunk(
   },
 );
 
-export const getAccommodation = createAsyncThunk(
-  GET_ACCOMMODATION,
-  async () => {
-    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id');
-    if (response.ok) {
-      return response.json();
-    }
-    throw response;
-  },
-);
-
 export const createAccommodation = createAsyncThunk(
   POST_ACCOMMODATION,
   async (accommodation) => {
@@ -57,11 +46,22 @@ export const createAccommodation = createAsyncThunk(
   },
 );
 
+export const getAccommodation = createAsyncThunk(
+  GET_ACCOMMODATION,
+  async (accommodationId) => {
+    const response = await fetch(`http://127.0.0.1:3001/api/v1/accommodations/${accommodationId}`);
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
+
 export const deleteAccommodation = createAsyncThunk(
   DELETE_ACCOMMODATION,
-  async () => {
+  async (accommodationId) => {
     const token = localStorage.getItem('token');
-    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id', {
+    const response = await fetch(`http://127.0.0.1:3001/api/v1/accommodations/${accommodationId}`, {
       method: 'delete',
       headers: {
         'content-type': 'application/json',
@@ -76,13 +76,13 @@ export const deleteAccommodation = createAsyncThunk(
 );
 
 export const accommodationsSlice = createSlice({
-  name: 'user',
+  name: 'accommodations',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(createAccommodation.fulfilled, (state, action) => ({
-        user: action.payload.status.data,
+        accommodations: action.payload.status.data,
         lifecycle: { loading: 'loaded' },
       }))
       .addCase(createAccommodation.rejected, (state) => ({
@@ -91,7 +91,7 @@ export const accommodationsSlice = createSlice({
       }))
       .addCase(deleteAccommodation.fulfilled, (state) => ({
         ...state,
-        user: [],
+        accommodations: [],
         lifecycle: { loading: 'loaded' },
       }))
       .addCase(deleteAccommodation.rejected, (state) => ({
