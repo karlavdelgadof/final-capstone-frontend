@@ -1,4 +1,4 @@
-// import axios from 'axios';
+//import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const GET_ACCOMMODATIONS = 'react-capstone/GET_ACCOMMODATIONS';
@@ -12,9 +12,9 @@ const initialState = {
   lifecycle: { loading: 'initial' },
 };
 
-// const accommodationsURL = 'http://127.0.0.1:3001/api/v1/accommodations';
-// const accommodationURL = 'http://127.0.0.1:3001/api/v1/accommodations/id';
-// const locationsURL = '';
+const accommodationsURL = 'http://127.0.0.1:3001/api/v1/accommodations';
+const accommodationURL = 'http://127.0.0.1:3001/api/v1/accommodations/id';
+const locationsURL = '';
 
 export const getAccommodations = createAsyncThunk(
   GET_ACCOMMODATIONS,

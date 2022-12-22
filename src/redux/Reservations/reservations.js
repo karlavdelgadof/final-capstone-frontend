@@ -1,38 +1,77 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 // import axios from 'axios';
 
-// const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q4jqYH5waNwpAMlI8Ds9/books';
-const initialState = [
-  {
-    id: 1,
-    user: {
-      id: 1,
-      name: 'Martha Vivatoska',
-    },
-    accommodation: 'This will be the accommodation description',
-    start_date: '22/11/20',
-    end_date: '22/12/20',
+const GET_RESERVATIONS = 'react-capstone/GET_RESERVATIONS';
+const POST_RESERVATION = 'react-capstone/POST_RESERVATION';
+const GET_RESERVATION = 'react-capstone/GET_RESERVATION';
+const DELETE_RESERVATION = 'react-capstone/DELETE_RESERVATION';
+
+const initialState = {
+  reservations: [],
+  lifecycle: { loading: 'initial' },
+};
+
+const reservationsURL = 'http://127.0.0.1:3001/api/v1/reservations';
+const reservationURL = 'http://127.0.0.1:3001/api/v1/reservations/id';
+
+export const getReservations = createAsyncThunk(
+  GET_RESERVATIONS,
+  async () => {
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations');
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
   },
-];
+);
 
-// export const reserve = createAsyncThunk('reservations/reserve', async (reservation) => {
-// const response = await axios.post(apiURL, reservation);
-// if (response.status === 201) {
-//   return reservation;
-// }
-// return response.data;
-// });
+export const getReservation = createAsyncThunk(
+  GET_RESERVATION,
+  async () => {
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id');
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
 
-export const getReservations = createAsyncThunk('reservations/getReservations', async () => initialState);
-// const response = await axios.get(apiURL);
-// console.log(response.data)
-// return response.data;
+export const createReservation = createAsyncThunk(
+  POST_RESERVATION,
+  async (reservation) => {
+    const token = localStorage.getItem('token');
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations', {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify(reservation),
+    });
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
 
-// export const cancelReservation = createAsyncThunk('reservations/cancelReservation',
-//   async (reservation) => {
-//   await axios.delete(`${apiURL}/${reservation.id}`);
-//   return reservation;
-// });
+export const deleteReservation = createAsyncThunk(
+  DELETE_RESERVATION,
+  async () => {
+    const token = localStorage.getItem('token');
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id', {
+      method: 'delete',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: token,
+      },
+    });
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
 
 export const reservationsSlice = createSlice({
   name: 'reservations',
