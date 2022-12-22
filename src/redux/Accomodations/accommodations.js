@@ -1,191 +1,103 @@
 // import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const locations = [
-  {
-    id: 1,
-    country: 'Sweden',
-    city: 'Orsundsbro',
-  },
-  {
-    id: 2,
-    country: 'Norway',
-    city: 'Oslo',
-  },
-  {
-    id: 3,
-    country: 'Turkey',
-    city: 'Ankara',
-  },
-  {
-    id: 4,
-    country: 'Mexico',
-    city: 'Tulum',
-  },
-  {
-    id: 5,
-    country: 'France',
-    city: 'Marseille',
-  },
-];
+const GET_ACCOMMODATIONS = 'react-capstone/GET_ACCOMMODATIONS';
+const POST_ACCOMMODATION = 'react-capstone/POST_ACCOMMODATION';
+const GET_ACCOMMODATION = 'react-capstone/GET_ACCOMMODATION';
+const DELETE_ACCOMMODATION = 'react-capstone/DELETE_ACCOMMODATION';
 
-const initialState = [
-  {
-    id: 1,
-    description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
-    address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
-    photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
-    ],
-    location: locations[0],
-    pets: [
-      {
-        id: 1,
-        name: 'Bubbles',
-        size: 'medium',
-        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-        information: 'Bubbles is a loving, energetic cattle dog who loves all of your attention. She is a single child and expects to be with you all the time.',
-        specie: 'dog',
-      },
-    ],
-    user: {
-      id: 1,
-      name: 'Martha Vivatoska',
-    },
-  },
-  {
-    id: 2,
-    description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
-    address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
-    photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
-    ],
-    location: locations[1],
-    pets: [
-      {
-        id: 2,
-        name: 'Penny',
-        size: 'small',
-        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-        information: 'Penny is a loving, energetic cattle cat who loves all of your attention. She is a single child and expects to be with you all the time.',
-        specie: 'cat',
-      },
-    ],
-    user: {
-      id: 2,
-      name: 'Cedric Tovsk',
+const initialState = {
+  accommodations: [],
+  locations: [],
+  lifecycle: { loading: 'initial' },
+};
 
-    },
-  },
-  {
-    id: 3,
-    description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
-    address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
-    photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
-    ],
-    location: locations[2],
-    pets: [
-      {
-        id: 3,
-        name: 'Poppie',
-        size: 'large',
-        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-        information: 'Bubbles is a loving, energetic cattle dog who loves all of your attention. She is a single child and expects to be with you all the time.',
-        specie: 'dog',
-      },
-    ],
-    user: {
-      id: 3,
-      name: 'Zair Sud',
-    },
-  },
-  {
-    id: 4,
-    description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
-    address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
-    photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
-    ],
-    location: locations[3],
-    pets: [
-      {
-        id: 4,
-        name: 'Bruno',
-        size: 'large',
-        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-        information: 'Bruno is a loving, energetic cattle dog who loves all of your attention. He is a single child and expects to be with you all the time.',
-        specie: 'dog',
-      },
-    ],
-    user: {
-      id: 4,
-      name: 'Fernando Orozco',
-    },
-  },
-  {
-    id: 5,
-    description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
-    address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
-    photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
-    ],
-    location: locations[4],
-    pets: [
-      {
-        id: 5,
-        name: 'Storm',
-        size: 'medium',
-        photos: ['https://picsum.photos/id/237/200/300', 'https://picsum.photos/id/237/200/300'],
-        information: 'Storm is a loving, energetic lizard who loves all of your attention. She is a single child and expects to be with you all the time.',
-        specie: 'lizard',
-      },
-    ],
-    user: {
-      id: 5,
-      name: 'David Gobblet',
-    },
-  },
+// const accommodationsURL = 'http://127.0.0.1:3001/api/v1/accommodations';
+// const accommodationURL = 'http://127.0.0.1:3001/api/v1/accommodations/id';
+// const locationsURL = '';
 
-];
+export const getAccommodations = createAsyncThunk(
+  GET_ACCOMMODATIONS,
+  async () => {
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations');
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
 
-// const accommodationsURL = 'https://api.coinlore.net/api/tickers/?start=100&limit=100';
+export const getAccommodation = createAsyncThunk(
+  GET_ACCOMMODATION,
+  async () => {
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id');
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
 
-export const getAccommodations = createAsyncThunk('accommodations/getAccommodations', () => initialState);
-// const response = await axios.get(accommodationsURL);
-// return response.data;
+export const createAccommodation = createAsyncThunk(
+  POST_ACCOMMODATION,
+  async (accommodation) => {
+    const token = localStorage.getItem('token');
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations', {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify(accommodation),
+    });
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
+
+export const deleteAccommodation = createAsyncThunk(
+  DELETE_ACCOMMODATION,
+  async () => {
+    const token = localStorage.getItem('token');
+    const response = await fetch('http://127.0.0.1:3001/api/v1/accommodations/id', {
+      method: 'delete',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: token,
+      },
+    });
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  },
+);
 
 export const accommodationsSlice = createSlice({
-  name: 'accommodations',
+  name: 'user',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // Add reducers to handle loading state as needed
     builder
-      .addCase(getAccommodations.fulfilled, (_state, action) => action.payload);
-    // .addCase(getCoins.fulfilled, (state, action) => action.payload.data.map(
-    //   (coin) => ({
-    //     name: coin.name,
-    //     symbol: coin.symbol,
-    //     rank: coin.rank,
-    //     id: coin.nameid,
-    //     price: coin.price_usd,
-    //     percent_change_24h: coin.percent_change_24h,
-    //     percent_change_1h: coin.percent_change_1h,
-    //     percent_change_7d: coin.percent_change_7d,
-    //     price_btc: coin.price_btc,
-    //     market_cap_usd: coin.market_cap_usd,
-    //     volume24: coin.volume24,
-    //     volume24a: coin.volume24a,
-    //     csupply: coin.csupply,
-    //   }
-    //   ),
-    // ));
+      .addCase(createAccommodation.fulfilled, (state, action) => ({
+        user: action.payload.status.data,
+        lifecycle: { loading: 'loaded' },
+      }))
+      .addCase(createAccommodation.rejected, (state) => ({
+        ...state,
+        lifecycle: { loading: 'rejected' },
+      }))
+      .addCase(deleteAccommodation.fulfilled, (state) => ({
+        ...state,
+        user: [],
+        lifecycle: { loading: 'loaded' },
+      }))
+      .addCase(deleteAccommodation.rejected, (state) => ({
+        ...state,
+        lifecycle: { loading: 'rejected' },
+      }));
   },
 });
 
