@@ -31,31 +31,31 @@ function AccommodationsForm() {
 
   return (
     <>
-    <div>
-      <h1>Add a new House sit</h1>
-      <form onSubmit={handleSubmit}>
-        <input value={description} onInput={(e) => setDescription(e.target.value)} placeholder="Add Details about the place..." type="text" />
-        <input value={address} onInput={(e) => setAddress(e.target.value)} placeholder="Address" type="text" />
-        <select
-          id="form-control"
-          onChange={(e) => {
-            setLocation(e.target.value);
-          }}
-          required
-        >
-          <option value="">Location</option>
-          {locations.map((location) => (
-            <option value={location.id} key={location.id}>
-              {[location.country, location.city]}
-            </option>
-          ))}
-        </select>
-        <br />
-        <button type="submit" onClick={handleSubmit}>
-          Create Accommodation
-        </button>
-      </form>
-    </div>
+      <div>
+        <h1>Add a new House sit</h1>
+        <form onSubmit={handleSubmit}>
+          <input value={description} onInput={(e) => setDescription(e.target.value)} placeholder="Add Details about the place..." type="text" />
+          <input value={address} onInput={(e) => setAddress(e.target.value)} placeholder="Address" type="text" />
+          <select
+            id="form-control"
+            onChange={(e) => {
+              setLocation(e.target.value);
+            }}
+            required
+          >
+            <option value="">Location</option>
+            {locations.map((location) => (
+              <option value={location.id} key={location.id}>
+                {[location.country, location.city]}
+              </option>
+            ))}
+          </select>
+          <br />
+          <button type="submit" onClick={handleSubmit}>
+            Create Accommodation
+          </button>
+        </form>
+      </div>
     </>
   );
 }
