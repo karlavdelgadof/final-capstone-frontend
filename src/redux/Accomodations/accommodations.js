@@ -81,6 +81,15 @@ export const accommodationsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(getAccommodations.fulfilled, (state, action) => ({
+        accommodations: action.payload.accommodations,
+        locations: action.payload.locations,
+        lifecycle: { loading: 'loaded' },
+      }))
+      .addCase(getAccommodations.rejected, (state) => ({
+        ...state,
+        lifecycle: { loading: 'rejected' },
+      }))
       .addCase(createAccommodation.fulfilled, (state, action) => ({
         accommodations: action.payload.status.data,
         lifecycle: { loading: 'loaded' },

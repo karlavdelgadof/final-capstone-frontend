@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-// Fetch get accommodations
 import { getAccommodations } from '../../redux/Accomodations/accommodations';
 import SingleAcco from './SingleAcco';
 
 const AccommodationsContainer = () => {
   const location = useLocation();
-  const accommodations = useSelector((state) => state.accommodations);
+  const accommodations = useSelector((state) => state.accommodations.accommodations);
+  const locations = useSelector((state) => state.accommodations.locations);
   const [search, setSearch] = useState('');
   const dispatch = useDispatch();
   useEffect(() => {
@@ -44,7 +44,13 @@ const AccommodationsContainer = () => {
               className="single-collection"
               key={accommodation.id}
             >
-              <SingleAcco accommodation={accommodation} />
+              <SingleAcco
+                accommodation={accommodation}
+                place={locations
+                  .filter((location) => (
+                    location.id === accommodation.location_id
+                  ))}
+              />
             </Link>
           ))}
         </div>
