@@ -17,8 +17,6 @@ const Navbar = () => (
       <li className="p-4"><NavLink to="/reservations/new">Reserve</NavLink></li>
       {/* /reservations */}
       <li className="p-4"><NavLink to="/reservations">My Reservations</NavLink></li>
-      {/* /profile */}
-      <li className="p-4"><NavLink to="">My Profile</NavLink></li>
       {/* /accommodations/new */}
       <li className="p-4"><NavLink to="/accomodation/new">Add a House sit</NavLink></li>
       {/* /accommodations */}
