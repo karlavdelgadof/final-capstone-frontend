@@ -37,3 +37,27 @@
     transform: rotate(360deg);
   }
 }
+
+.reservation-item {
+  box-shadow: 21px 21px 43px #9c9999, -20px -16px 141px #dfdfdf;
+}
+
+.reservations-bg {
+  background-image: url('../src/multimedia/reservations-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  background-color: #88bdce;
+  background-position: center;
+  backdrop-filter: blur(10px);
+}
+
+.acco-bg {
+  background-image: url('../src/multimedia/acco-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  background-color: #db8eae;
+  background-position: center;
+  backdrop-filter: blur(10px);
+}

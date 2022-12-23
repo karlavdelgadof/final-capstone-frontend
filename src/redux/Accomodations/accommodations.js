@@ -1,20 +1,44 @@
 // import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+export const locations = [
+  {
+    id: 1,
+    country: 'Sweden',
+    city: 'Orsundsbro',
+  },
+  {
+    id: 2,
+    country: 'Norway',
+    city: 'Oslo',
+  },
+  {
+    id: 3,
+    country: 'Turkey',
+    city: 'Ankara',
+  },
+  {
+    id: 4,
+    country: 'Mexico',
+    city: 'Tulum',
+  },
+  {
+    id: 5,
+    country: 'France',
+    city: 'Marseille',
+  },
+];
+
 const initialState = [
   {
     id: 1,
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
-    location: {
-      id: 1,
-      country: 'Sweden',
-      city: 'Orsundsbro',
-    },
+    location: locations[0],
     pets: [
       {
         id: 1,
@@ -35,14 +59,10 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
-    location: {
-      id: 2,
-      country: 'Norway',
-      city: 'Oslo',
-    },
+    location: locations[1],
     pets: [
       {
         id: 2,
@@ -64,14 +84,10 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
-    location: {
-      id: 3,
-      country: 'Turkey',
-      city: 'Ankara',
-    },
+    location: locations[2],
     pets: [
       {
         id: 3,
@@ -92,14 +108,10 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
-    location: {
-      id: 4,
-      country: 'Mexico',
-      city: 'Tulum',
-    },
+    location: locations[3],
     pets: [
       {
         id: 4,
@@ -120,14 +132,10 @@ const initialState = [
     description: 'This is a brand new tiny house with a loft design, dramatic windows, and soaring ceilings. Due to its strategic location in the valley of the volcanoes it provides unmatched 360 degree views of the mountains and night sky.',
     address: 'Nysatra Alsta 2, Orsundsbro, North Central, 749 63, 0171-46 60 08',
     photos: [
-      'https://picsum.photos/200/300',
-      'https://picsum.photos/200/300',
+      'https://picsum.photos/200/',
+      'https://picsum.photos/200/',
     ],
-    location: {
-      id: 5,
-      country: 'France',
-      city: 'Marseille',
-    },
+    location: locations[4],
     pets: [
       {
         id: 5,

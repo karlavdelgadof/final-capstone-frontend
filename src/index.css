@@ -8,6 +8,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  height: 100vh;
 }
 
 body {
@@ -15,4 +21,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fefdfb;
+  height: 100vh;
 }

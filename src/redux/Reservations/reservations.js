@@ -1,9 +1,18 @@
-/* import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import accommodations from '../Accomodations/accommodations';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 // import axios from 'axios';
 
 // const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q4jqYH5waNwpAMlI8Ds9/books';
 const initialState = [
+  {
+    id: 1,
+    user: {
+      id: 1,
+      name: 'Martha Vivatoska',
+    },
+    accommodation: 'This will be the accommodation description',
+    start_date: '22/11/20',
+    end_date: '22/12/20',
+  },
   {
     id: 1,
     user: {
@@ -24,12 +33,10 @@ const initialState = [
 // return response.data;
 // });
 
-// export const getReservations = createAsyncThunk('reservations/getReservations', async () => {
+export const getReservations = createAsyncThunk('reservations/getReservations', async () => initialState);
 // const response = await axios.get(apiURL);
 // console.log(response.data)
 // return response.data;
-// initialState);
-// });
 
 // export const cancelReservation = createAsyncThunk('reservations/cancelReservation',
 //   async (reservation) => {
@@ -45,20 +52,20 @@ export const reservationsSlice = createSlice({
     // Add reducers to handle loading state as needed
     builder
       // .addCase(reserve.fulfilled, (state, action) => {
-      //   // Create reservation
+      //   //Create reservation
       //   state.push(action.payload);
       // })
       .addCase(getReservations.fulfilled, (state, action) => Object.entries(action.payload).map(
         ([id, [reservation]]) => ({ ...reservation, id }),
       ));
     // .addCase(cancelReservation.fulfilled, (state, action) => {
-    //   state.forEach((reservation) => {
+    // state.forEach((reservation) => {
     //     if (reservation.id === action.payload.id) {
     //       state.splice(state.indexOf(reservation), 1);
     //     }
     //   });
     // });
   },
-}); */
+});
 
-/* export default reservationsSlice.reducer; */
+export default reservationsSlice.reducer;
