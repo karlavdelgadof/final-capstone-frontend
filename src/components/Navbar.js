@@ -22,7 +22,7 @@ const Navbar = () => (
       {/* /accommodations/new */}
       <li className="p-4"><NavLink to="/accomodation/new">Add a House sit</NavLink></li>
       {/* /accommodations */}
-      <li className="p-4"><NavLink to="">Delete a House sit</NavLink></li>
+      <li className="p-4"><NavLink to="/accommodations/delete">Delete a House sit</NavLink></li>
       <li className="p-4">
         <Logout />
       </li>
