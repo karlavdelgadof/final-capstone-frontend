@@ -16,11 +16,9 @@ const AccommodationsContainer = () => {
     }
   });
 
-
-  const filtered = location.pathname.includes('/accommodations/delete') ? accommodations.filter((accommodation) => accommodation.user.id ) : accommodations.filter(
+  const filtered = location.pathname.includes('/accommodations/delete') ? accommodations.filter((accommodation) => accommodation.user.id) : accommodations.filter(
     (accommodation) => !search || new RegExp(search, 'ig').test(accommodation.location.country || accommodation.location.city),
   );
-
 
   return (
     <>

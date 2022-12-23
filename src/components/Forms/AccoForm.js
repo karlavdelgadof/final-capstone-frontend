@@ -35,8 +35,8 @@ function AccommodationsForm() {
         <div className="relative top-1/4 flex flex-col gap-12 items-center">
           <h1 className="text-lg">Add a new House sit</h1>
           <form className="flex flex-col w-8/12 gap-6" onSubmit={handleSubmit}>
-            <input value={description} onInput={(e) => setDescription(e.target.value)} placeholder="Add Details about the place..." type="text" className="h-20 p-4 rounded-md"/>
-            <input value={address} onInput={(e) => setAddress(e.target.value)} placeholder="Address" type="text" className="h-10 p-4 rounded-md"/>
+            <input value={description} onInput={(e) => setDescription(e.target.value)} placeholder="Add Details about the place..." type="text" className="h-20 p-4 rounded-md" />
+            <input value={address} onInput={(e) => setAddress(e.target.value)} placeholder="Address" type="text" className="h-10 p-4 rounded-md" />
             <div className="flex justify-between">
               <select
                 id="form-control"
@@ -49,7 +49,9 @@ function AccommodationsForm() {
                 <option value="">Location</option>
                 {locations.map((location) => (
                   <option value={location.id} key={location.id}>
-                    {location.country}, {location.city}
+                    {location.country}
+                    ,
+                    {location.city}
                   </option>
                 ))}
               </select>
