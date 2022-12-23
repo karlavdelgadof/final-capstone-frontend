@@ -14,7 +14,7 @@ const ReservationsContainer = () => {
 
   return (
     <>
-      <div className="flex flex-col mt-12">
+      <div className="flex flex-col pt-12">
         <h2 className="text-lg">Check your reservations</h2>
         <div className="flex flex-wrap p-8 gap-6 justify-around">
           {reservations.map((reservation) => (

@@ -5,7 +5,7 @@ import bellIcon from '../../multimedia/reservation.png';
 const SingleReservation = (props) => {
   const { reservation } = props;
   return (
-    <div className="p-6 flex gap-6 rounded-lg reservation-item">
+    <div className="p-6 flex gap-6 rounded-lg reservation-item w-[45%]">
       <div>
         <img src={bellIcon} alt="" />
       </div>
