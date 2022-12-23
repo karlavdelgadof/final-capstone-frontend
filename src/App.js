@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes/* , useLocation */ } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import SingUpPage from './pages/user/SignupPage';
@@ -9,7 +9,7 @@ import MyReservations from './pages/MyReservations';
 import AccommodationsForm from './components/AccoForm';
 
 function App() {
-  const location = useLocation();
+  // const location = useLocation();
   return (
     <>
       <div className="App float-right w-3/4">

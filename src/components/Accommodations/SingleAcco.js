@@ -29,7 +29,7 @@ SingleAccommodation.propTypes = {
   accommodation: PropTypes.shape({
     location: PropTypes.shape({
       country: PropTypes.string,
-      city: PropTypes.string
+      city: PropTypes.string,
     }),
     description: PropTypes.string,
     photos: PropTypes.instanceOf(Array).isRequired,
