@@ -72,7 +72,7 @@ REQUIRED SECTIONS:
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="http://localhost:3000/">Local host</a></li>
+    <li><a href="https://github.com/Hannziegel/final-capstone-backend.git">ROR API (Backend)</a></li>
   </ul>
 </details>
 
