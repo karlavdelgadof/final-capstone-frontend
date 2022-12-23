@@ -27,6 +27,8 @@ const SingleAccommodation = (props) => {
         <span>{accommodation.pets.length}</span>
         <img src={dogIcon} alt="" className="h-6" />
       </div>
+
+      {location.pathname.includes('/accommodations/delete') ? <button>Delete</button>: ''}
     </div>
   );
 };

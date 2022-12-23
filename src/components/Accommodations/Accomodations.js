@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // Fetch get accommodations
 import { getAccommodations } from '../../redux/Accomodations/accommodations';
 import SingleAcco from './SingleAcco';
 
 const AccommodationsContainer = () => {
+  const location = useLocation();
   const accommodations = useSelector((state) => state.accommodations);
   const [search, setSearch] = useState('');
   const dispatch = useDispatch();
@@ -15,9 +16,11 @@ const AccommodationsContainer = () => {
     }
   });
 
-  const filtered = accommodations.filter(
+
+  const filtered = location.pathname.includes('/accommodations/delete') ? accommodations.filter((accommodation) => accommodation.user.id ) : accommodations.filter(
     (accommodation) => !search || new RegExp(search, 'ig').test(accommodation.location.country || accommodation.location.city),
   );
+
 
   return (
     <>
