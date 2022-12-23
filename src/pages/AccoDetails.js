@@ -10,37 +10,36 @@ const AccoDetails = () => {
   const accommodation = location?.state?.accommodation;
 
   return (
-    <div>
-      <h2>{accommodation.description.slice(0, 20)}</h2>
-      <p>
-        {accommodation.location.country}
-        ,
-        {accommodation.location.city}
-      </p>
-      <div>
-        <span>{accommodation.pets.length}</span>
-        <img src={dogIcon} alt="" />
-      </div>
-      <div>
-        <Carousel>
-          {accommodation.photos.map((photo, i) => (
+    <div className="flex flex-col items-center pt-6 px-8">
+      <h2 className="text-start">{accommodation.description.slice(0, 20)}</h2>
+      <div className="flex gap-6">
+        <Carousel showThumbs={false} showStatus={false} className="aspect-square w-[50%] h-full">
+          {accommodation.photos.map((photo) => (
             <div key={photo}>
               <img src={photo} alt="" />
-              <p className="legend">
-                Legend
-                {i}
-              </p>
             </div>
           ))}
         </Carousel>
-      </div>
-      <div>
-        <h3>Description</h3>
-        <p>{accommodation.description}</p>
-      </div>
-      <div>
-        <h3>Address</h3>
-        <p>{accommodation.address}</p>
+        <div className="flex flex-col w-[50%]">
+          <p>
+            {accommodation.location.country}
+            ,
+            {accommodation.location.city}
+          </p>
+          <div>
+            <span>{accommodation.pets.length}</span>
+            <img src={dogIcon} alt="" />
+          </div>
+
+          <div>
+            <h3>Description</h3>
+            <p>{accommodation.description}</p>
+          </div>
+          <div>
+            <h3>Address</h3>
+            <p>{accommodation.address}</p>
+          </div>
+        </div>
       </div>
       <div>
         <h3>PawPals</h3>
